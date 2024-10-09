@@ -1,0 +1,10 @@
+“Hello, i am Ariel”.
+Codigo:
+import React from 'react';
+import {Text, View} from 'react-native';
+
+const Cat = () => {
+  const name = "Ariel";
+  return <Text>Hello, I am {name}!</Text>;
+};
+export default Cat;
