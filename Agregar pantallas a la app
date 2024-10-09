@@ -1,0 +1,83 @@
+import { View, Text, Button, StyleSheet } from "react-native";
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
+// Pantalla Home con botones para navegar a otras pantallas
+function HomeScreen({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <Text>Home Screen</Text>
+      <Button
+        title="Go to Details"
+        onPress={() => navigation.navigate('Details')}
+      />
+      <View style={styles.spacer} />
+      <Button
+        title="Go to Profile"
+        onPress={() => navigation.navigate('Profile')}
+      />
+      <View style={styles.spacer} />
+      <Button
+        title="Go to Settings"
+        onPress={() => navigation.navigate('Settings')}
+      />
+    </View>
+  );
+}
+
+// Pantalla Detalles
+function DetailsScreen() {
+  return (
+    <View style={styles.container}>
+      <Text>Details Screen</Text>
+    </View>
+  );
+}
+
+// Nueva pantalla Perfil
+function ProfileScreen() {
+  return (
+    <View style={styles.container}>
+      <Text>Profile Screen</Text>
+    </View>
+  );
+}
+
+// Nueva pantalla Configuraciones
+function SettingsScreen() {
+  return (
+    <View style={styles.container}>
+      <Text>Settings Screen</Text>
+    </View>
+  );
+}
+
+// Creación del Stack Navigator
+const Stack = createNativeStackNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Home">
+        {/* Pantallas registradas en el stack */}
+        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+        <Stack.Screen name="Profile" component={ProfileScreen} />
+        <Stack.Screen name="Settings" component={SettingsScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  spacer: {
+    marginVertical: 10, // Espacio entre botones
+  },
+});
+
+export default App;
