@@ -1,0 +1,13 @@
+import { Text, SafeAreaView, StyleSheet } from 'react-native';
+import React from 'react';
+
+const getFullName = (firstName, secondName, thirdName) =>{
+  return firstName + ' '+ secondName+ ' '+ thirdName;
+};
+
+const Cat =()=>{
+  return <Text>Hello, I am {getFullName('Flores','De lira','Brayan')}!</Text>; 
+};
+
+export default Cat;
+
