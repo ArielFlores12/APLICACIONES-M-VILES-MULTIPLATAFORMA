@@ -1,0 +1,18 @@
+import {Text, TextInput, View} from 'react-native';
+
+const Cat =()=>{
+  return (
+    <View>
+    <Text>Hello, I am...</Text>
+    <TextInput
+    style={{
+      height:60,
+      borderColor: 'red',
+      borderWidth: 2,
+    }}
+    defaultValue="Name me!"
+    />
+    </View>
+  );
+};
+export default Cat;
